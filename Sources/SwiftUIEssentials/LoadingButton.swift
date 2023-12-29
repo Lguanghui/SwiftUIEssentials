@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// TODO: - liangguanghui 支持 DSL 语法（考虑写个宏？）
 public struct LoadingButtonConfig {
     public init(width: CGFloat = 312,
                 height: CGFloat = 54,
@@ -50,14 +51,11 @@ public struct LoadingButton<Content: View>: View {
     
     let content: Content
     
-    var asyncAction: (() async -> Void)?
-    
     var action: (() -> Void)?
     
-    public init(config: LoadingButtonConfig = LoadingButtonConfig(), isLoading: Binding<Bool>, @ViewBuilder content: () -> Content, asyncAction: (() async -> Void)? = nil, action: (() -> Void)? = nil) {
+    public init(config: LoadingButtonConfig = LoadingButtonConfig(), isLoading: Binding<Bool>, @ViewBuilder content: () -> Content, action: (() -> Void)? = nil) {
         self.content = content()
         self._isLoading = isLoading
-        self.asyncAction = asyncAction
         self.action = action
         self.config = config
     }
@@ -65,11 +63,7 @@ public struct LoadingButton<Content: View>: View {
     public var body: some View {
         Button(action: {
                 if !isLoading {
-                    if let asyncAction {
-                        Task {
-                            await asyncAction()
-                        }
-                    } else if let action {
+                    if let action {
                         action()
                     }
                 }

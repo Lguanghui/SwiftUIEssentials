@@ -22,7 +22,7 @@ public struct AnimatedRingBar: View {
             .stroke(strokeColor, style: StrokeStyle(lineWidth: strokeWidth, lineCap: .round, lineJoin: .round))
             .frame(width: size - 20, height: size - 20)
             .rotationEffect(Angle(degrees: isLoading ? 360 : 0))
-            .animation(Animation.default.repeatForever(autoreverses: false), value: isLoading)
+            .animation(Animation.default.repeatForever(autoreverses: false).speed(0.75), value: isLoading)
             .onAppear() {
                 self.isLoading = true
             }
