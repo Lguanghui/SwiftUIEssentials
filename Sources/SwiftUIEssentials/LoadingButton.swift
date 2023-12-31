@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-// TODO: - liangguanghui 支持 DSL 语法（考虑写个宏？）
 public struct LoadingButtonConfig {
     public init(width: CGFloat = 312,
                 height: CGFloat = 54,
