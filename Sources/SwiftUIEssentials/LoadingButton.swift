@@ -45,18 +45,20 @@ public struct LoadingButton<Content: View>: View {
     
     let config: LoadingButtonConfig
     
-    @Binding
-    var isLoading: Bool
+    @Binding var isLoading: Bool
+    
+    @Binding private var enabled: Bool
     
     let content: Content
     
     var action: (() -> Void)?
     
-    public init(config: LoadingButtonConfig = LoadingButtonConfig(), isLoading: Binding<Bool>, @ViewBuilder content: () -> Content, action: (() -> Void)? = nil) {
+    public init(config: LoadingButtonConfig = LoadingButtonConfig(), enabled: Binding<Bool>, isLoading: Binding<Bool>, @ViewBuilder content: () -> Content, action: (() -> Void)? = nil) {
         self.content = content()
         self._isLoading = isLoading
         self.action = action
         self.config = config
+        _enabled = enabled
     }
     
     public var body: some View {
@@ -83,14 +85,14 @@ public struct LoadingButton<Content: View>: View {
                     }
                 }
                 .frame(width: config.width, height: config.height)
-                .disabled(isLoading)
+                .disabled(isLoading || enabled == false)
                 .animation(.easeInOut, value: isLoading)
                 .buttonStyle(.plain)
     }
 }
 
 #Preview {
-    LoadingButton(config: LoadingButtonConfig(width: 200, height: 60), isLoading: .constant(true)) {
+    LoadingButton(config: LoadingButtonConfig(width: 200, height: 60), enabled: .constant(true), isLoading: .constant(true)) {
         
     } action: {
         

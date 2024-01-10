@@ -33,7 +33,7 @@ public struct AnimatedRingBar: View {
 }
 
 #Preview {
-    LoadingButton(isLoading: .constant(true)) {
+    LoadingButton(enabled: .constant(true), isLoading: .constant(true)) {
         
     } action: {
         
