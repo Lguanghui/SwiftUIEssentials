@@ -23,7 +23,6 @@
 		BE104E8B2C04F308000D4ED4 /* SwiftUIEssentialsDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUIEssentialsDemo.entitlements; sourceTree = "<group>"; };
 		BE104E8D2C04F308000D4ED4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BE104E952C04F386000D4ED4 /* DynamicHeightTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightTextView.swift; sourceTree = "<group>"; };
-		BE87D5312C063DD200BB039B /* SwiftUIEssentials */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftUIEssentials; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +40,6 @@
 		BE104E792C04F307000D4ED4 = {
 			isa = PBXGroup;
 			children = (
-				BE87D5312C063DD200BB039B /* SwiftUIEssentials */,
 				BE104E842C04F307000D4ED4 /* SwiftUIEssentialsDemo */,
 				BE104E832C04F307000D4ED4 /* Products */,
 			);

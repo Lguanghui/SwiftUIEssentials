@@ -1,0 +1,15 @@
+{
+  "originHash" : "2e3dfdcf7803453d3c028ec750de1cc490d99431946f3f9209933190662b544f",
+  "pins" : [
+    {
+      "identity" : "swiftuiessentials",
+      "kind" : "remoteSourceControl",
+      "location" : "https://Lguanghui@github.com/Lguanghui/SwiftUIEssentials.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "2e76ef3161c74db9e6df25812717c7301484b193"
+      }
+    }
+  ],
+  "version" : 3
+}
