@@ -8,7 +8,7 @@
 import SwiftUI
 
 @available(macOS 14.0, *)
-@available(iOS 15.0, *)
+@available(iOS 17.0, *)
 public struct DynamicHeightText: View {
     @State var contentHeight: CGFloat
     @State var minHeight: CGFloat
@@ -41,7 +41,7 @@ public struct DynamicHeightText: View {
 }
 
 #Preview {
-    if #available(macOS 14.0, *) {
+    if #available(macOS 14.0, iOS 17.0, *) {
         DynamicHeightText(minHeight: 50, maxHeight: 100, content: .constant("hello"))
     } else {
         // Fallback on earlier versions
