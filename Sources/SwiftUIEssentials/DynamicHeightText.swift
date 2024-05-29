@@ -29,7 +29,6 @@ public struct DynamicHeightText: View {
                 .background {
                     GeometryReader(content: { geometry in
                         Color.clear.onChange(of: content) { oldValue, newValue in
-                            print(geometry.size.height)
                             let geoHeight = geometry.size.height
                             contentHeight = min(maxHeight, max(minHeight, geoHeight))
                         }
