@@ -37,9 +37,9 @@ struct DynamicHeightTextView: View {
         .frame(maxWidth: 200, alignment: .topLeading)
         .padding(.all, 4)
         .font(.system(size: 16))
-        .foregroundStyle(.black)
+        .foregroundStyle(.primary)
         .clipShape(.rect(cornerRadius: 8))
-        .border(.black)
+        .border(.primary)
         .padding(EdgeInsets(top: 16, leading: 16, bottom: 23, trailing: 16))
     }
 }
