@@ -12,7 +12,7 @@ import SwiftUI
 public class FloatingPanel<Content: View>: NSPanel {
     @Binding var isPresented: Bool
     
-    init(view: () -> Content,
+    public init(view: () -> Content,
              contentRect: NSRect,
              backing: NSWindow.BackingStoreType = .buffered,
              defer flag: Bool = false,
@@ -78,18 +78,19 @@ public class FloatingPanel<Content: View>: NSPanel {
     public override var canBecomeMain: Bool {
         return true
     }
-
+    
+    
 }
 
 private struct FloatingPanelKey: EnvironmentKey {
     static let defaultValue: NSPanel? = nil
 }
  
-extension EnvironmentValues {
-  var floatingPanel: NSPanel? {
-    get { self[FloatingPanelKey.self] }
-    set { self[FloatingPanelKey.self] = newValue }
-  }
+public extension EnvironmentValues {
+    var floatingPanel: NSPanel? {
+        get { self[FloatingPanelKey.self] }
+        set { self[FloatingPanelKey.self] = newValue }
+    }
 }
 
 #Preview {

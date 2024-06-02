@@ -53,7 +53,7 @@ fileprivate struct FloatingPanelModifier<PanelContent: View>: ViewModifier {
     }
 }
 
-extension View {
+public extension View {
     /** Present a ``FloatingPanel`` in SwiftUI fashion
      - Parameter isPresented: A boolean binding that keeps track of the panel's presentation state
      - Parameter contentRect: The initial content frame of the window
