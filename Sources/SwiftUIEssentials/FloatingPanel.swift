@@ -8,6 +8,7 @@
 //  https://cindori.com/developer/floating-panel
 
 import SwiftUI
+import SwiftUIFoundation
 
 public class FloatingPanel<Content: View>: NSPanel {
     @Binding var isPresented: Bool
@@ -25,7 +26,6 @@ public class FloatingPanel<Content: View>: NSPanel {
                     styleMask: [.nonactivatingPanel, .titled, .resizable, .closable, .fullSizeContentView],
                     backing: backing,
                     defer: flag)
-     
         /// Allow the panel to be on top of other windows
         isFloatingPanel = true
         level = .floating
@@ -53,9 +53,13 @@ public class FloatingPanel<Content: View>: NSPanel {
      
         /// Set the content view.
         /// The safe area is ignored because the title bar still interferes with the geometry
-        contentView = NSHostingView(rootView: view()
+//        contentView = NSHostingView(rootView: view()
+//            .ignoresSafeArea()
+//            .environment(\.floatingPanel, self))
+        contentView = NSHostingViewZeroSafeArea(rootView: view()
             .ignoresSafeArea()
-            .environment(\.floatingPanel, self))
+            .environment(\.floatingPanel, self)
+        )
     }
     
     /// Close automatically when out of focus, e.g. outside click

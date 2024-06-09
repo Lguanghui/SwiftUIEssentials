@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swiftuifoundation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Lguanghui/SwiftUIFoundation.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "ba5c1bf6eb7b8d00f3e7c542026c37a48a0133b7"
+      }
+    }
+  ],
+  "version" : 2
+}
