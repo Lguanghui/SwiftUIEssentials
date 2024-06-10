@@ -16,6 +16,14 @@ public struct AnimatedRingBar: View {
     @State public var size: CGFloat
     @State private var rotationAngle: CGFloat = 0
     
+    public init(isLoading: Bool = false, strokeColor: Color, strokeWidth: CGFloat, size: CGFloat, rotationAngle: CGFloat = 0) {
+        self.isLoading = isLoading
+        self.strokeColor = strokeColor
+        self.strokeWidth = strokeWidth
+        self.size = size
+        self.rotationAngle = rotationAngle
+    }
+    
     public var body: some View {
         Circle()
             .trim(from: 0, to: 0.7)
