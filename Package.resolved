@@ -1,12 +1,21 @@
 {
   "pins" : [
     {
+      "identity" : "foundationx",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Lguanghui/FoundationX.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "c3cbc9500ff9ef7c468462f8e5436c176d34b600"
+      }
+    },
+    {
       "identity" : "swiftuifoundation",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Lguanghui/SwiftUIFoundation.git",
       "state" : {
         "branch" : "master",
-        "revision" : "ba5c1bf6eb7b8d00f3e7c542026c37a48a0133b7"
+        "revision" : "7a890cfdbc78566929cdb0b459720df030fe24d1"
       }
     }
   ],
